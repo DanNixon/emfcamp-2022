@@ -1,0 +1,19 @@
+---
+- name: Setup controller
+  hosts: controller
+
+  tasks:
+    - name: Set secrets
+      ansible.builtin.set_fact:
+        secrets: "{{ lookup('community.general.passwordstore', 'ansible_secrets/mb7pmf returnall=true') | from_yaml }}"
+
+    - name: Ensure deployment
+      kubernetes.core.k8s:
+        definition: "{{ lookup('template', 'k8s/%s' % item) | from_yaml_all | list }}"
+        state: present
+      loop:
+        - namespace.yml
+        - mqtt.yml
+        - matrix-remote-closedown.yml
+        - rubric-publisher.yml
+        - mqtt-actor.yml

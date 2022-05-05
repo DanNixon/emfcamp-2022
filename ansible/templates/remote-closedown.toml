@@ -1,0 +1,25 @@
+tx_guard_time = 500
+
+[mqtt]
+broker = "tcp://139.162.198.236:31883"
+username = "remote_closedown"
+password = "{{ secrets.mqtt_passwords.remote_closedown }}"
+client_id = "remote-closedown-{{ transmitter_callsign }}"
+status_topic = "{{ closedown_mqtt_topics.status }}"
+command_topic = "{{ closedown_mqtt_topics.command }}"
+
+[tx_power_enable]
+number = 22
+inverted = true
+
+# [tx_power_status]
+# number = 9
+# inverted = true
+
+[ptt_enable]
+number = 27
+inverted = true
+
+# [ptt_status]
+# number = 10
+# inverted = true

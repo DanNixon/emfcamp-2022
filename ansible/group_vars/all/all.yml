@@ -1,0 +1,6 @@
+---
+transmitter_callsign: mb7pmf
+
+closedown_mqtt_topics:
+  status: "remote_closedown/{{ transmitter_callsign }}"
+  command: "remote_closedown/{{ transmitter_callsign }}/command"

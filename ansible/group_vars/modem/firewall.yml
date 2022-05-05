@@ -1,0 +1,39 @@
+---
+nftables_tables:
+  - name: filter
+    family: inet
+
+    chains:
+      - name: input
+        config:
+          type: filter
+          hook: input
+          priority: filter
+          policy: drop
+        rules:
+          - 'iif lo counter accept'
+
+          - 'ct state invalid counter drop'
+          - 'ct state { established, related } counter accept'
+
+          - 'ip6 nexthdr icmpv6 icmpv6 type { nd-neighbor-solicit, echo-request, nd-router-advert, nd-neighbor-advert } counter accept'
+
+          - 'tcp dport ssh log prefix "firewall: new ssh connection " counter accept'
+          - 'iifname "tailscale0" tcp dport 9100 counter accept'  # Prometheus Node Exporter
+          - 'iifname "tailscale0" tcp dport { 8073, 8055 } counter accept'  # UniPager web UI
+
+          - 'log prefix "firewall: dropped " counter drop'
+
+      - name: forward
+        config:
+          type: filter
+          hook: forward
+          priority: filter
+          policy: drop
+
+      - name: output
+        config:
+          type: filter
+          hook: output
+          priority: filter
+          policy: accept

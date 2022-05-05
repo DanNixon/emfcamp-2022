@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net
+}
+
+description="POCSAG/DAPNET paget transmitter modulator"
+
+command="/usr/bin/unipager"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"

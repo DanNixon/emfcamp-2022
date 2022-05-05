@@ -1,0 +1,93 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rubric-publisher-secrets
+  namespace: radio
+data:
+  MQTT_PASSWORD: "{{ secrets.mqtt_passwords.rubric_publisher | b64encode }}"
+  DAPNET_PASSWORD: "{{ lookup('community.general.passwordstore', 'Passwords/Personal/dapnet/Password') | b64encode }}"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rubric-publisher-config
+  namespace: radio
+data:
+  mapping.toml: |
+    [[mapping]]
+    topic = "emfcamp/announcements"
+    rubric = "emfcamp"
+    number = 1
+
+    [[mapping]]
+    topic = "emfcamp/stage_a"
+    rubric = "emfcamp"
+    number = 2
+
+    [[mapping]]
+    topic = "emfcamp/stage_b"
+    rubric = "emfcamp"
+    number = 3
+
+    [[mapping]]
+    topic = "emfcamp/stage_c"
+    rubric = "emfcamp"
+    number = 4
+
+    [[mapping]]
+    topic = "emfcamp/workshop_1"
+    rubric = "emfcamp"
+    number = 5
+
+    [[mapping]]
+    topic = "emfcamp/workshop_2"
+    rubric = "emfcamp"
+    number = 6
+
+    [[mapping]]
+    topic = "emfcamp/workshop_3"
+    rubric = "emfcamp"
+    number = 7
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rubric-publisher
+  namespace: radio
+  labels:
+    app: rubric-publisher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rubric-publisher
+  template:
+    metadata:
+      labels:
+        app: rubric-publisher
+    spec:
+      volumes:
+        - name: rubric-publisher-config
+          configMap:
+            name: rubric-publisher-config
+      containers:
+        - name: mqtt-actor
+          image: ghcr.io/dannixon/mqtt-rubric-publisher:v0.1.0
+          env:
+            - name: RUST_LOG
+              value: debug
+            - name: MQTT_BROKER
+              value: tcp://mqtt.radio.svc.cluster.local:1883
+            - name: MQTT_USERNAME
+              value: rubric_publisher
+            - name: DAPNET_USERNAME
+              value: m0nxn
+          envFrom:
+            - secretRef:
+                name: rubric-publisher-secrets
+          volumeMounts:
+            - mountPath: /config
+              name: rubric-publisher-config

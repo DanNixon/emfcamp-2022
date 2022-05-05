@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net
+}
+
+description="Remote radio station closedown tool"
+
+command="/usr/bin/remote-closedown"
+command_args="--config-file=/etc/remote-closedown.toml"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"

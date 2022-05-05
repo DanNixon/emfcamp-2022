@@ -1,0 +1,105 @@
+---
+- name: Setup modem
+  hosts: modem
+
+  vars:
+    project_dirs:
+      remote_closedown: /home/dan/radio/remote-closedown
+      unipager: /home/dan/radio/UniPager-v1
+
+  pre_tasks:
+    - name: Set secrets
+      ansible.builtin.set_fact:
+        secrets: "{{ lookup('community.general.passwordstore', 'ansible_secrets/mb7pmf returnall=true') | from_yaml }}"
+
+  handlers:
+    - name: Restart remote-closedown
+      become: true
+      ansible.builtin.service:
+        name: remote-closedown
+        state: restarted
+
+    - name: Restart UniPager
+      become: true
+      ansible.builtin.service:
+        name: unipager
+        state: restarted
+
+  roles:
+    - dannixon.system.nftables
+    - dannixon.system.tailscale
+    - dannixon.services.sshd
+    - dannixon.services.prometheus_node_exporter
+
+  tasks:
+    - name: Ensure required packages are installed
+      become: true
+      ansible.builtin.package:
+        name:
+          - alsa-utils
+          - htop
+        state: present
+
+    # TODO: enable community repo
+
+    - name: Ensure OpenRC configs are present
+      become: true
+      ansible.builtin.copy:
+        src: "{{ item }}.openrc"
+        dest: "/etc/init.d/{{ item }}"
+        mode: "u=rwx,g=rx,o=rx"
+      loop:
+        - remote-closedown
+        - unipager
+
+    - name: Ensure remote-closedown binary is present
+      become: true
+      ansible.builtin.copy:
+        src: "{{ project_dirs.remote_closedown }}/target/aarch64-unknown-linux-musl/release/remote-closedown"
+        dest: /usr/bin
+        mode: "u=rwx,g=rx,o=rx"
+      notify: Restart remote-closedown
+
+    - name: Ensure remote-closedown config is present
+      become: true
+      ansible.builtin.template:
+        src: remote-closedown.toml
+        dest: /etc
+        mode: "u=r,g=r,o=r"
+      notify: Restart remote-closedown
+
+    - name: Ensure UniPager binary is present
+      become: true
+      ansible.builtin.copy:
+        src: "{{ project_dirs.unipager }}/target/aarch64-unknown-linux-musl/release/unipager"
+        dest: /usr/bin
+        mode: "u=rwx,g=rx,o=rx"
+      notify: Restart unipager
+
+    - name: Ensure UniPager config is present
+      become: true
+      ansible.builtin.template:
+        src: unipager.json
+        dest: /etc
+        mode: "u=r,g=r,o=r"
+      notify: Restart UniPager
+
+    - name: Ensure required services are enabled
+      become: true
+      ansible.builtin.service:
+        name: "{{ item }}"
+        enabled: true
+        state: started
+      loop:
+        - remote-closedown
+        - unipager
+
+    - name: LBU commit
+      become: true
+      community.general.lbu:
+        commit: true
+        include:
+          - /etc/init.d/remote-closedown
+          - /etc/init.d/unipager
+          - /usr/bin/remote-closedown
+          - /usr/bin/unipager

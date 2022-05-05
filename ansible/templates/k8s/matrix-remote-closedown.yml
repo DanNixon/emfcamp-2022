@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: matrix-remote-closedown-secrets
+  namespace: radio
+data:
+  MQTT_PASSWORD: "{{ secrets.mqtt_passwords.matrix_remote_closedown | b64encode }}"
+  MATRIX_PASSWORD: "{{ lookup('community.general.passwordstore', 'Passwords/Personal/matrix.org/izayoi_sakuya/Password') | b64encode }}"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: matrix-remote-closedown
+  namespace: radio
+  labels:
+    app: matrix-remote-closedown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: matrix-remote-closedown
+  template:
+    metadata:
+      labels:
+        app: matrix-remote-closedown
+    spec:
+      containers:
+        - name: mqtt-actor
+          image: ghcr.io/dannixon/matrix-remote-closedown:v0.2.0
+          env:
+            - name: RUST_LOG
+              value: debug
+          envFrom:
+            - secretRef:
+                name: matrix-remote-closedown-secrets
+          args:
+            - "--station-name={{ transmitter_callsign }}"
+            - "--mqtt-broker=tcp://mqtt.radio.svc.cluster.local:1883"
+            - "--mqtt-username=matrix_remote_closedown"
+            - "--status-topic={{ closedown_mqtt_topics.status }}"
+            - "--command-topic={{ closedown_mqtt_topics.command }}"
+            - "--matrix-username=@izayoi_sakuya:matrix.org"
+            - "--room=!LpBfhDcZLlKVvDoNKV:matrix.org"
+            - "--operator=@dannixon:matrix.org"
+            - "--operator=@alistair_uk:matrix.org"
+            - "--operator=@malcolm:synapse.windmill.onl"

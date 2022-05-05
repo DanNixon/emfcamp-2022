@@ -1,0 +1,74 @@
+{
+  "master": {
+    "server": "dapnet.afu.rwth-aachen.de",
+    "port": 43434,
+    "call": "{{ transmitter_callsign }}",
+    "auth": "{{ '' }}",
+    "fallback": [
+      [
+        "funkruf.db0del.db0sda.ampr.org",
+        43434
+      ],
+      [
+        "dapnet.db0fa.ampr.org",
+        43434
+      ],
+      [
+        "pocsag2.db0nms.ampr.org",
+        43434
+      ],
+      [
+        "dapnet.db0sda.ampr.org",
+        43434
+      ],
+      [
+        "dapnet.db0vvs.ampr.org",
+        43434
+      ],
+      [
+        "dapnet.di0han.ampr.org",
+        43434
+      ],
+      [
+        "on3dhc.db0sda.ampr.org",
+        43434
+      ],
+      [
+        "dapnet.afu.rwth-aachen.de",
+        43434
+      ],
+      [
+        "db0dbn.ig-funk-siebengebirge.de",
+        43434
+      ]
+    ]
+  },
+  "transmitter": "Audio",
+  "ptt": {
+    "method": "Gpio",
+    "inverted": true,
+    "gpio_pin": 0,
+    "serial_port": "/dev/ttyS0"
+  },
+  "raspager": {
+    "freq": 439987500,
+    "freq_corr": 0,
+    "pa_output_level": 63,
+    "mod_deviation": 13
+  },
+  "c9000": {
+    "baudrate": 38400,
+    "dummy_enabled": false,
+    "dummy_port": "/dev/ttyUSB0",
+    "dummy_pa_output_level": 0
+  },
+  "audio": {
+    "device": "default",
+    "level": 127,
+    "inverted": true,
+    "tx_delay": 15
+  },
+  "rfm69": {
+    "port": "/dev/ttyUSB0"
+  }
+}
