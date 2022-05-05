@@ -3,7 +3,7 @@
     "server": "dapnet.afu.rwth-aachen.de",
     "port": 43434,
     "call": "{{ transmitter_callsign }}",
-    "auth": "{{ '' }}",
+    "auth": "{{ secrets.dapnet_authkey }}",
     "fallback": [
       [
         "funkruf.db0del.db0sda.ampr.org",
