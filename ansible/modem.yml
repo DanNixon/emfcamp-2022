@@ -7,11 +7,6 @@
       remote_closedown: /home/dan/radio/remote-closedown
       unipager: /home/dan/radio/UniPager-v1
 
-  pre_tasks:
-    - name: Set secrets
-      ansible.builtin.set_fact:
-        secrets: "{{ lookup('community.general.passwordstore', 'ansible_secrets/mb7pmf returnall=true') | from_yaml }}"
-
   handlers:
     - name: Restart remote-closedown
       become: true
@@ -24,6 +19,17 @@
       ansible.builtin.service:
         name: unipager
         state: restarted
+
+  pre_tasks:
+    - name: Set secrets
+      ansible.builtin.set_fact:
+        secrets: "{{ lookup('community.general.passwordstore', 'ansible_secrets/mb7pmf returnall=true') | from_yaml }}"
+
+    - name: Ensure community repository is enabled
+      become: true
+      ansible.builtin.lineinfile:
+        dest: /etc/apk/repositories
+        line: 'http://dl-cdn.alpinelinux.org/alpine/v3.15/community'
 
   roles:
     - dannixon.system.nftables
@@ -39,8 +45,6 @@
           - alsa-utils
           - htop
         state: present
-
-    # TODO: enable community repo
 
     - name: Ensure OpenRC configs are present
       become: true
@@ -74,7 +78,7 @@
         src: "{{ project_dirs.unipager }}/target/aarch64-unknown-linux-musl/release/unipager"
         dest: /usr/bin
         mode: "u=rwx,g=rx,o=rx"
-      notify: Restart unipager
+      notify: Restart UniPager
 
     - name: Ensure UniPager config is present
       become: true
