@@ -37,7 +37,7 @@ spec:
                 name: matrix-remote-closedown-secrets
           args:
             - "--station-name={{ transmitter_callsign }}"
-            - "--mqtt-broker=tcp://mqtt.radio.svc.cluster.local:1883"
+            - "--mqtt-broker=tcp://mqtt.mqtt.svc.cluster.local:1883"
             - "--mqtt-username=matrix_remote_closedown"
             - "--status-topic={{ closedown_mqtt_topics.status }}"
             - "--command-topic={{ closedown_mqtt_topics.command }}"

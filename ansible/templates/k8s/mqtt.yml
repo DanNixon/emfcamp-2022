@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mosquitto-config
-  namespace: radio
+  namespace: mqtt
 data:
   mosquitto.conf: |
     per_listener_settings false
@@ -27,7 +27,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mosquitto
-  namespace: radio
+  namespace: mqtt
   labels:
     app: mosquitto
 spec:
@@ -56,7 +56,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mqtt
-  namespace: radio
+  namespace: mqtt
 spec:
   type: NodePort
   selector:

@@ -18,38 +18,59 @@ data:
   mapping.toml: |
     [[mapping]]
     topic = "emfcamp/announcements"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 1
 
     [[mapping]]
     topic = "emfcamp/stage_a"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 2
 
     [[mapping]]
     topic = "emfcamp/stage_b"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 3
 
     [[mapping]]
     topic = "emfcamp/stage_c"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 4
 
     [[mapping]]
     topic = "emfcamp/workshop_1"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 5
 
     [[mapping]]
     topic = "emfcamp/workshop_2"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 6
 
     [[mapping]]
     topic = "emfcamp/workshop_3"
-    rubric = "emfcamp"
+    [mapping.destination]
+    type = "rubric"
+    name = "emfcamp"
     number = 7
+
+    [[mapping]]
+    topic = "emfcamp/m0nxn"
+    [mapping.destination]
+    type = "call"
+    recipients = ["m0nxn"]
+    transmitter_groups = ["uk-all"]
 
 ---
 apiVersion: apps/v1
@@ -75,12 +96,12 @@ spec:
             name: rubric-publisher-config
       containers:
         - name: mqtt-actor
-          image: ghcr.io/dannixon/mqtt-rubric-publisher:v0.1.0
+          image: ghcr.io/dannixon/mqtt-rubric-publisher:v0.2.0
           env:
             - name: RUST_LOG
               value: debug
             - name: MQTT_BROKER
-              value: tcp://mqtt.radio.svc.cluster.local:1883
+              value: tcp://mqtt.mqtt.svc.cluster.local:1883
             - name: MQTT_USERNAME
               value: rubric_publisher
             - name: DAPNET_USERNAME

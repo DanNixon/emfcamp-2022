@@ -7,6 +7,7 @@ metadata:
 data:
   debug.txt: |
     0 | emfcamp/announcements | M0NXN: this is a test, ignore plz
+    0 | emfcamp/m0nxn         | M0NXN: is this thing on?
 
 ---
 apiVersion: apps/v1
@@ -37,7 +38,7 @@ spec:
             - name: RUST_LOG
               value: debug
             - name: MQTT_BROKER
-              value: tcp://mqtt.radio.svc.cluster.local:1883
+              value: tcp://mqtt.mqtt.svc.cluster.local:1883
             - name: MQTT_USERNAME
               value: mqtt_actor
             - name: MQTT_PASSWORD
