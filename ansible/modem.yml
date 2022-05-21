@@ -2,11 +2,6 @@
 - name: Setup modem
   hosts: modem
 
-  vars:
-    project_dirs:
-      remote_closedown: /home/dan/radio/remote-closedown
-      unipager: /home/dan/radio/UniPager-v1
-
   handlers:
     - name: Restart remote-closedown
       become: true
@@ -58,9 +53,9 @@
 
     - name: Ensure remote-closedown binary is present
       become: true
-      ansible.builtin.copy:
-        src: "{{ project_dirs.remote_closedown }}/target/aarch64-unknown-linux-musl/release/remote-closedown"
-        dest: /usr/bin
+      ansible.builtin.get_url:
+        url: https://github.com/DanNixon/remote-closedown/releases/download/v0.3.0/remote-closedown-aarch64-unknown-linux-musl
+        dest: /usr/bin/remote-closedown
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart remote-closedown
 
@@ -74,9 +69,9 @@
 
     - name: Ensure UniPager binary is present
       become: true
-      ansible.builtin.copy:
-        src: "{{ project_dirs.unipager }}/target/aarch64-unknown-linux-musl/release/unipager"
-        dest: /usr/bin
+      ansible.builtin.get_url:
+        url: https://github.com/DanNixon/UniPager-v1/releases/download/v1.0.3-1-aarch64/unipager
+        dest: /usr/bin/unipager
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart UniPager
 

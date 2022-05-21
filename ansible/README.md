@@ -29,11 +29,6 @@ Using [alpine-raspberry-pi-install](https://github.com/DanNixon/alpine-raspberry
 - `lbu include /root/.ssh/authorized_keys`
 - `lbu commit`
 
-### Build projects
-
-- Build [UniPager-v1](https://github.com/DanNixon/UniPager-v1) and [remote-closedown](https://github.com/DanNixon/remote-closedown) using [cross-rs](https://github.com/cross-rs/cross): `cross build --release --target aarch64-unknown-linux-musl`
-- Set the path to the root of each project in `modem.yml`
-
 ### Deployment via Ansible
 
 - `ansible-playbook modem.yml`
