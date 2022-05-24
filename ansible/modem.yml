@@ -15,6 +15,12 @@
         name: unipager
         state: restarted
 
+    - name: Restart unipager-status-mqtt
+      become: true
+      ansible.builtin.service:
+        name: unipager-status-mqtt
+        state: restarted
+
   pre_tasks:
     - name: Set secrets
       ansible.builtin.set_fact:
@@ -50,6 +56,7 @@
       loop:
         - remote-closedown
         - unipager
+        - unipager-status-mqtt
 
     - name: Ensure remote-closedown binary is present
       become: true
@@ -83,6 +90,22 @@
         mode: "u=r,g=r,o=r"
       notify: Restart UniPager
 
+    - name: Ensure unipager-status-mqtt binary is present
+      become: true
+      ansible.builtin.get_url:
+        url: https://github.com/DanNixon/unipager-status-mqtt/releases/download/v0.1.0/unipager-mqtt-status-aarch64-unknown-linux-musl
+        dest: /usr/bin/unipager-status-mqtt
+        mode: "u=rwx,g=rx,o=rx"
+      notify: Restart unipager-status-mqtt
+
+    - name: Ensure unipager-status-mqtt config is present
+      become: true
+      ansible.builtin.template:
+        src: unipager-status-mqtt.toml
+        dest: /etc
+        mode: "u=r,g=r,o=r"
+      notify: Restart unipager-status-mqtt
+
     - name: Ensure required services are enabled
       become: true
       ansible.builtin.service:
@@ -92,6 +115,7 @@
       loop:
         - remote-closedown
         - unipager
+        - unipager-status-mqtt
 
     - name: LBU commit
       become: true
@@ -100,5 +124,7 @@
         include:
           - /etc/init.d/remote-closedown
           - /etc/init.d/unipager
+          - /etc/init.d/unipager-status-mqtt
           - /usr/bin/remote-closedown
           - /usr/bin/unipager
+          - /usr/bin/unipager-status-mqtt

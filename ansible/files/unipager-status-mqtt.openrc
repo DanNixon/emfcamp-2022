@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net
+}
+
+description="UniPager status MQTT bridge"
+
+command="/usr/bin/unipager-status-mqtt"
+command_args="--config=/etc/unipager-status-mqtt.toml"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"

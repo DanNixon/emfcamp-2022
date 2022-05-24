@@ -1,0 +1,15 @@
+[unipager]
+api = "ws://localhost:8055/"
+
+[mqtt]
+broker = "tcp://139.162.198.236:31883"
+username = "unipager_status"
+password = "{{ secrets.mqtt_passwords.unipager_status }}"
+client_id = "unipager_status"
+
+[topics]
+availability = "unipager_status/availability"
+timeslot = "unipager_status/timeslot"
+queue_length = "unipager_status/queue_length"
+transmitting = "unipager_status/transmitting"
+new_message = "unipager_status/new_message"
