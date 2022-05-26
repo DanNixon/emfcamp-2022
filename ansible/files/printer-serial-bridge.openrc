@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net
+}
+
+description="Thermal printer serial-MQTT bridge"
+
+command="/usr/bin/serial-mqtt-bridge"
+command_args="/etc/printer-serial-bridge.toml"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"

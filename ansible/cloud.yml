@@ -1,6 +1,6 @@
 ---
-- name: Setup controller
-  hosts: controller
+- name: Setup cloud controller
+  hosts: cloud
 
   tasks:
     - name: Set secrets

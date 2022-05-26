@@ -1,6 +1,6 @@
 ---
-- name: Setup modem
-  hosts: modem
+- name: Setup DAPNET modem
+  hosts: dapnet-modem
 
   handlers:
     - name: Restart remote-closedown

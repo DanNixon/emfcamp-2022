@@ -1,0 +1,66 @@
+---
+- name: Setup printer bridge/controller
+  hosts: printer
+
+  handlers:
+    - name: Restart serial bridge
+      become: true
+      ansible.builtin.service:
+        name: printer-serial-bridge
+        state: restarted
+
+  pre_tasks:
+    - name: Set secrets
+      ansible.builtin.set_fact:
+        secrets: "{{ lookup('community.general.passwordstore', 'ansible_secrets/mb7pmf returnall=true') | from_yaml }}"
+
+    - name: Ensure community repository is enabled
+      become: true
+      ansible.builtin.lineinfile:
+        dest: /etc/apk/repositories
+        line: 'http://dl-cdn.alpinelinux.org/alpine/v3.15/community'
+
+  roles:
+    - dannixon.system.nftables
+    - dannixon.system.tailscale
+    - dannixon.services.sshd
+
+  tasks:
+    - name: Ensure OpenRC configs are present
+      become: true
+      ansible.builtin.copy:
+        src: printer-serial-bridge.openrc
+        dest: /etc/init.d/printer-serial-bridge
+        mode: "u=rwx,g=rx,o=rx"
+
+    - name: Ensure mqtt-serial-bridge binary is present
+      become: true
+      ansible.builtin.get_url:
+        url: https://github.com/DanNixon/serial-mqtt-bridge/releases/download/v0.2.1/serial-mqtt-bridge-aarch64-unknown-linux-musl
+        dest: /usr/bin/serial-mqtt-bridge
+        mode: "u=rwx,g=rx,o=rx"
+      notify: Restart serial bridge
+
+    - name: Ensure serial bridge config is present
+      become: true
+      ansible.builtin.template:
+        src: printer-serial-bridge.toml
+        dest: /etc
+        mode: "u=r,g=r,o=r"
+      notify: Restart serial bridge
+
+    - name: Ensure required services are enabled
+      become: true
+      ansible.builtin.service:
+        name: printer-serial-bridge
+        enabled: true
+        state: started
+
+    - name: LBU commit
+      become: true
+      community.general.lbu:
+        commit: true
+        include:
+          - /var/lib/tailscale
+          - /etc/init.d/printer-serial-bridge
+          - /usr/bin/serial-mqtt-bridge

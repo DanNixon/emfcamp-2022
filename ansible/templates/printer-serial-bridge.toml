@@ -1,0 +1,16 @@
+[broker]
+address = "tcp://139.162.198.236:31883"
+client_id = "thermal-printer-serial-bridge"
+username = "thermal_printer"
+password = "{{ secrets.mqtt_passwords.thermal_printer }}"
+
+[topics]
+transmit = "thermal_printer/tx"
+receive = "thermal_printer/rx"
+receive_control = "thermal_printer/rx/control"
+availability = "thermal_printer/availability"
+
+[serial]
+device = "/dev/ttyUSB0"
+baud = 9600
+timeout = "3s"
