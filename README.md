@@ -1,3 +1,3 @@
-# DAPNET transmitter [![CI](https://github.com/DanNixon/dapnet-tx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/DanNixon/dapnet-tx/actions/workflows/ci.yml)
+# EMF Camp 2022 [![CI](https://github.com/DanNixon/emfcamp-2022/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/DanNixon/emfcamp-2022/actions/workflows/ci.yml)
 
-An utterly overengineered POCSAG transmitter deployment.
+The silly things I am responsible for at [EMF](https://www.emfcamp.org/) 2022.
