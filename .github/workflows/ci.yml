@@ -1,7 +1,7 @@
 ---
 name: CI
 
-"on":
+on:
   push:
     branches:
       - main
@@ -20,3 +20,29 @@ jobs:
 
       - name: Ansible Lint
         run: ansible-lint
+
+  config-generator-formatting-and-quality:
+    name: config-generator Formatting and Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup
+        run: rustup component add clippy rustfmt
+
+      - name: Format
+        run: cd config-generator && cargo fmt -- --check
+
+      - name: Clippy
+        run: cd config-generator && cargo clippy -- -Dwarnings
+
+  config-generator-build-and-test:
+    name: config-generator Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build and Test
+        run: cd config-generator && cargo test

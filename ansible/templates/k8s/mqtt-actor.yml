@@ -6,8 +6,8 @@ metadata:
   namespace: radio
 data:
   debug.txt: |
-    0 | emfcamp/announcements | M0NXN: this is a test, ignore plz
-    0 | emfcamp/m0nxn         | M0NXN: is this thing on?
+    0 | dapnet/emfcamp/announcements | M0NXN: this is a test, ignore plz
+    0 | dapnet/m0nxn                 | M0NXN: is this thing on?
 
 ---
 apiVersion: apps/v1
