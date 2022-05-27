@@ -33,7 +33,7 @@ spec:
             name: mqtt-actor-config
       containers:
         - name: mqtt-actor
-          image: ghcr.io/dannixon/mqtt-actor:v1.2.0
+          image: ghcr.io/dannixon/mqtt-actor:v1.3.0
           env:
             - name: RUST_LOG
               value: debug

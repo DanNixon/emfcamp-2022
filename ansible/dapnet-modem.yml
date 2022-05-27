@@ -61,7 +61,7 @@
     - name: Ensure remote-closedown binary is present
       become: true
       ansible.builtin.get_url:
-        url: https://github.com/DanNixon/remote-closedown/releases/download/v0.3.0/remote-closedown-aarch64-unknown-linux-musl
+        url: https://github.com/DanNixon/remote-closedown/releases/download/v0.4.0/remote-closedown-aarch64-unknown-linux-musl
         dest: /usr/bin/remote-closedown
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart remote-closedown
@@ -93,7 +93,7 @@
     - name: Ensure unipager-status-mqtt binary is present
       become: true
       ansible.builtin.get_url:
-        url: https://github.com/DanNixon/unipager-status-mqtt/releases/download/v0.1.0/unipager-mqtt-status-aarch64-unknown-linux-musl
+        url: https://github.com/DanNixon/unipager-status-mqtt/releases/download/v0.2.0/unipager-mqtt-status-aarch64-unknown-linux-musl
         dest: /usr/bin/unipager-status-mqtt
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart unipager-status-mqtt
