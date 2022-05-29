@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: mqtt-actor
-          image: ghcr.io/dannixon/matrix-remote-closedown:v0.3.0
+          image: ghcr.io/dannixon/matrix-remote-closedown:v0.3.1
           env:
             - name: RUST_LOG
               value: debug

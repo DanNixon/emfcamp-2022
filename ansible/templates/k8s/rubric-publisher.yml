@@ -96,7 +96,7 @@ spec:
             name: rubric-publisher-config
       containers:
         - name: mqtt-actor
-          image: ghcr.io/dannixon/mqtt-rubric-publisher:v0.3.0
+          image: ghcr.io/dannixon/mqtt-rubric-publisher:v0.3.1
           env:
             - name: RUST_LOG
               value: debug

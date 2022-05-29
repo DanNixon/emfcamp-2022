@@ -61,7 +61,7 @@
     - name: Ensure remote-closedown binary is present
       become: true
       ansible.builtin.get_url:
-        url: https://github.com/DanNixon/remote-closedown/releases/download/v0.4.0/remote-closedown-aarch64-unknown-linux-musl
+        url: https://github.com/DanNixon/remote-closedown/releases/download/v0.4.1/remote-closedown-aarch64-unknown-linux-musl
         dest: /usr/bin/remote-closedown
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart remote-closedown
