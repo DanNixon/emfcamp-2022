@@ -4,7 +4,12 @@
 
 - `ansible-galaxy install -r requirements.yml`
 
-## Modem deployment
+## Backend/controller deployment
+
+- Create a K8s cluster somewhere (Linode is always good)
+- `ansible-playbook cloud.yml`
+
+## MB7PMF modem deployment
 
 ### Alpine install: prepare SD card
 
@@ -31,12 +36,24 @@ Using [alpine-raspberry-pi-install](https://github.com/DanNixon/alpine-raspberry
 
 ### Deployment via Ansible
 
-- `ansible-playbook modem.yml`
+- `ansible-playbook dapnet_modem.yml`
 - `tailscale up --accept-dns=false --advertise-tags=tag:radio`
 - `lbu include /var/lib/tailscale`
 - `lbu commit`
 
-## Backend/controller deployment
+## Thermal printer controller deployment
 
-- Create a K8s cluster somewhere (Linode is always good)
-- `ansible-playbook controller.yml`
+### Alpine install: prepare SD card
+
+Using [alpine-raspberry-pi-install](https://github.com/DanNixon/alpine-raspberry-pi-install).
+
+### Alpine install: configuration
+
+As per above.
+
+### Deployment via Ansible
+
+- `ansible-playbook dapnet_modem.yml`
+- `tailscale up --accept-dns=false --advertise-tags=tag:emfcamp`
+- `lbu include /var/lib/tailscale`
+- `lbu commit`
