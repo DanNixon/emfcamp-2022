@@ -36,7 +36,7 @@
     - name: Ensure mqtt-serial-bridge binary is present
       become: true
       ansible.builtin.get_url:
-        url: https://github.com/DanNixon/serial-mqtt-bridge/releases/download/v0.2.2/serial-mqtt-bridge-aarch64-unknown-linux-musl
+        url: https://github.com/DanNixon/serial-mqtt-bridge/releases/download/v0.2.3/serial-mqtt-bridge-aarch64-unknown-linux-musl
         dest: /usr/bin/serial-mqtt-bridge
         mode: "u=rwx,g=rx,o=rx"
       notify: Restart serial bridge
