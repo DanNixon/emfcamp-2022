@@ -15,6 +15,12 @@ data:
     Sun, 05 Jun 2022 07:00:00 +0100 | dapnet/m0nxn | M0NXN: Get out of bed
     Mon, 06 Jun 2022 07:00:00 +0100 | dapnet/m0nxn | M0NXN: Get out of bed
 
+  countdown.txt: |
+    Mon, 30 May 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | EMF is getting close!
+    Tue, 31 May 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Such EMF, very soon. wow.
+    Wed, 01 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Another generic message about EMF being soon
+    Thu, 02 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Are you on your way to EMF yet?
+
   schedule_dapnet.txt: |
     Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Opening Ceremony
     Fri, 03 Jun 2022 10:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: A brief history of Time Zones and Daylight Saving Time
