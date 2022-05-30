@@ -103,6 +103,9 @@ def print_general_accouncement(p, data):
     p.set()
     p.text(f"{data['msg']}\n")
 
+    if "qr" in data:
+        p.qr(data["qr"], center=True)
+
     p.cut()
 
     logging.info("Printing done")

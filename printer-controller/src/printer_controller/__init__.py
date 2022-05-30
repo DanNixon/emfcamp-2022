@@ -1,4 +1,5 @@
-from .formatters import print_schedule_announcement
+from .formatters import (print_schedule_announcement,
+                         print_general_accouncement)
 from .mqtt_printer import MqttPrinter
 
 import json
@@ -10,6 +11,7 @@ import os
 def on_connect(c, o, f, r):
     logging.info("Connected to MQTT broker")
     c.subscribe("emfcamp/timely_schedule")
+    c.subscribe("emfcamp/printer_announce")
 
 
 def main():
@@ -40,9 +42,19 @@ def main():
         except Exception as e:
             logging.error(e)
 
+    def on_announcement_message(m, o, msg):
+        logging.info("Got announcement message")
+        try:
+            data = json.loads(msg.payload)
+            print_general_accouncement(printer, data)
+        except Exception as e:
+            logging.error(e)
+
     mqttc = mqtt.Client()
     mqttc.on_connect = on_connect
     mqttc.username_pw_set("printer_publisher", mqtt_password)
     mqttc.connect("139.162.198.236", 31883)
     mqttc.message_callback_add("emfcamp/timely_schedule", on_schedule_message)
+    mqttc.message_callback_add("emfcamp/printer_announce",
+                               on_announcement_message)
     mqttc.loop_forever()
