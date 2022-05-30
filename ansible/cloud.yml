@@ -16,4 +16,5 @@
         - mqtt.yml
         - matrix-remote-closedown.yml
         - rubric-publisher.yml
+        - printer-controller.yml
         - mqtt-actor.yml

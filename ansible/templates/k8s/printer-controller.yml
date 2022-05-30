@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: printer-controller-secrets
+  namespace: printer
+data:
+  MQTT_PASSWORD: "{{ secrets.mqtt_passwords.printer_publisher | b64encode }}"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: printer-controller
+  namespace: printer
+  labels:
+    app: printer-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: printer-controller
+  template:
+    metadata:
+      labels:
+        app: printer-controller
+    spec:
+      containers:
+        - name: printer-controller
+          image: ghcr.io/dannixon/emfcamp-2022-printer-controller:852e3f1d2afec2a10e6e08a757f5d2522baaa314
+          envFrom:
+            - secretRef:
+                name: printer-controller-secrets

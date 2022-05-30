@@ -9,3 +9,9 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: radio
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: printer
