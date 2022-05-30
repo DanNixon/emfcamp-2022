@@ -8,6 +8,7 @@ data:
   debug.txt: |
     0  | dapnet/m0nxn | M0NXN: is this thing on?
     30 | dapnet/m0nxn | M0NXN: is this thing still on?
+    60 | dapnet/m0nxn | M0NXN: is this thing still on now?
 
   m0nxn.txt: |
     Fri, 03 Jun 2022 07:00:00 +0100 | dapnet/m0nxn | M0NXN: Get out of bed
@@ -16,7 +17,8 @@ data:
     Mon, 06 Jun 2022 07:00:00 +0100 | dapnet/m0nxn | M0NXN: Get out of bed
 
   countdown.txt: |
-    Mon, 30 May 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | EMF is getting close!
+    Mon, 30 May 2022 10:15:00 +0100 | dapnet/emfcamp/announcements | EMF is getting close!
+    Mon, 30 May 2022 11:00:00 +0100 | dapnet/emfcamp/announcements | EMF is getting closer!
     Tue, 31 May 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Such EMF, very soon. wow.
     Wed, 01 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Another generic message about EMF being soon
     Thu, 02 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Are you on your way to EMF yet?
@@ -173,7 +175,7 @@ spec:
             name: mqtt-actor-config
       containers:
         - name: mqtt-actor
-          image: ghcr.io/dannixon/mqtt-actor:v1.3.0
+          image: ghcr.io/dannixon/mqtt-actor:v1.4.0
           env:
             - name: RUST_LOG
               value: debug
