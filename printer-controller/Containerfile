@@ -1,0 +1,6 @@
+FROM docker.io/library/python:3.8-slim
+
+COPY . .
+RUN pip install .
+
+CMD ["printer-controller"]
