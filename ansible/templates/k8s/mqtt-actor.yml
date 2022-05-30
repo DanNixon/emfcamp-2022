@@ -7,6 +7,8 @@ metadata:
 data:
   debug.txt: |
     0  | dapnet/m0nxn | M0NXN: is this thing on?
+    0  | emfcamp/printer_announce | {"timestamp": "now", "title": "Hello, world!", "msg": "This is a test of the printed announcement service."}
+    0  | emfcamp/printer_announce | {"timestamp": "now", "title": "Hello, world! (2)", "msg": "This is a another test of the printed announcement service, but with a QR code (fancy).", "qr": "https://github.com/DanNixon/emfcamp-2022"}
     30 | dapnet/m0nxn | M0NXN: is this thing still on?
     60 | dapnet/m0nxn | M0NXN: is this thing still on now?
 

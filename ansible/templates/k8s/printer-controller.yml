@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: printer-controller
-          image: ghcr.io/dannixon/emfcamp-2022-printer-controller:852e3f1d2afec2a10e6e08a757f5d2522baaa314
+          image: ghcr.io/dannixon/emfcamp-2022-printer-controller:87e086fac7b0f5161016d115f2394ad7b100567d
           envFrom:
             - secretRef:
                 name: printer-controller-secrets
