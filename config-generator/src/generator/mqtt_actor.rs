@@ -14,9 +14,8 @@ impl fmt::Display for Message {
             f,
             "{} | {} | {}",
             self.timestamp.to_rfc2822(),
-            // self.timestamp.to_rfc3339(),
             self.topic,
-            self.text
+            self.text.replace("|", "/") // | is used as a delimiter, but some people have used it in their talk submission
         )
     }
 }
