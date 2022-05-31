@@ -2,7 +2,11 @@ mod films;
 mod main_events;
 pub(crate) mod venue;
 
-use self::{films::Film, main_events::Talk, venue::Venue};
+use self::{
+    films::Film,
+    main_events::{Performance, Talk, Workshop, YouthWorkshop},
+    venue::Venue,
+};
 use anyhow::Result;
 use chrono::{DateTime, FixedOffset};
 use serde::Serialize;
@@ -34,6 +38,17 @@ impl fmt::Display for Event {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.event {
             EventKind::Talk(t) => write!(f, "Talk @ {} in {}: {}", self.start, self.venue, t),
+            EventKind::Workshop(t) => {
+                write!(f, "Workshop @ {} in {}: {}", self.start, self.venue, t)
+            }
+            EventKind::YouthWorkshop(t) => write!(
+                f,
+                "Youth Workshop @ {} in {}: {}",
+                self.start, self.venue, t
+            ),
+            EventKind::Performance(t) => {
+                write!(f, "Performance @ {} in {}: {}", self.start, self.venue, t)
+            }
             EventKind::Film(t) => write!(f, "Film @ {} in {}: {}", self.start, self.venue, t),
         }
     }
@@ -61,5 +76,8 @@ impl PartialEq for Event {
 #[serde(tag = "type", rename_all = "snake_case")]
 pub(crate) enum EventKind {
     Talk(Talk),
+    Workshop(Workshop),
+    YouthWorkshop(YouthWorkshop),
+    Performance(Performance),
     Film(Film),
 }

@@ -21,6 +21,14 @@ fn venue_to_topic(venue: &Venue) -> String {
         Venue::StageA => "dapnet/emfcamp/stage_a",
         Venue::StageB => "dapnet/emfcamp/stage_b",
         Venue::StageC => "dapnet/emfcamp/stage_c",
+        Venue::Workshop1 => "dapnet/emfcamp/workshop",
+        Venue::Workshop2 => "dapnet/emfcamp/workshop",
+        Venue::Workshop3 => "dapnet/emfcamp/workshop",
+        Venue::Workshop4 => "dapnet/emfcamp/workshop",
+        Venue::Workshop5 => "dapnet/emfcamp/workshop",
+        Venue::Lounge => "dapnet/emfcamp/workshop",
+        Venue::Amsat => "dapnet/emfcamp/workshop",
+        Venue::YouthWorkshop => "dapnet/emfcamp/youth_workshop",
         Venue::Film => "dapnet/emfcamp/film",
     }
     .to_string()
@@ -31,6 +39,14 @@ fn venue_short_name(venue: &Venue) -> String {
         Venue::StageA => "Stg A",
         Venue::StageB => "Stg B",
         Venue::StageC => "Stg C",
+        Venue::Workshop1 => "Ws 1",
+        Venue::Workshop2 => "Ws 2",
+        Venue::Workshop3 => "Ws 3",
+        Venue::Workshop4 => "Ws 4",
+        Venue::Workshop5 => "Ws 5",
+        Venue::Lounge => "Lounge",
+        Venue::Amsat => "AMSAT",
+        Venue::YouthWorkshop => "Youth Ws",
         Venue::Film => "Flm",
     }
     .to_string()
@@ -40,6 +56,15 @@ fn event_to_message(event: &Event) -> String {
     let mut msg = match &event.event {
         EventKind::Talk(talk) => {
             format!("{}: {}", venue_short_name(&event.venue), talk.title)
+        }
+        EventKind::Workshop(workshop) => {
+            format!("{}: {}", venue_short_name(&event.venue), workshop.title)
+        }
+        EventKind::YouthWorkshop(workshop) => {
+            format!("{}: {}", venue_short_name(&event.venue), workshop.title)
+        }
+        EventKind::Performance(performance) => {
+            format!("{}: {}", venue_short_name(&event.venue), performance.title)
         }
         EventKind::Film(film) => {
             format!(

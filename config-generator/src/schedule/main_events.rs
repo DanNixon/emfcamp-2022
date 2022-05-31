@@ -23,6 +23,21 @@ impl From<api::Event> for Event {
                 venue: event.venue.clone(),
                 event: EventKind::Talk(event.into()),
             },
+            api::Event::Workshop(event) => Self {
+                start: fix_shitty_timestamps(event.start_date),
+                venue: event.venue.clone(),
+                event: EventKind::Workshop(event.into()),
+            },
+            api::Event::YouthWorkshop(event) => Self {
+                start: fix_shitty_timestamps(event.start_date),
+                venue: event.venue.clone(),
+                event: EventKind::YouthWorkshop(event.into()),
+            },
+            api::Event::Performance(event) => Self {
+                start: fix_shitty_timestamps(event.start_date),
+                venue: event.venue.clone(),
+                event: EventKind::Performance(event.into()),
+            },
         }
     }
 }
@@ -57,14 +72,95 @@ impl fmt::Display for Talk {
     }
 }
 
-impl From<api::Talk> for Talk {
-    fn from(event: api::Talk) -> Self {
+impl From<api::GenericEvent> for Talk {
+    fn from(event: api::GenericEvent) -> Self {
         Self {
             title: event.title,
             speaker: event.speaker,
             pronouns: event.pronouns,
             description: event.description,
             recorded: event.may_record,
+            link: event.link,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq, Eq, Serialize)]
+pub(crate) struct Workshop {
+    pub title: String,
+    speaker: String,
+    pronouns: Option<String>,
+    description: String,
+    link: Url,
+}
+
+impl fmt::Display for Workshop {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} by {}", self.title, self.speaker)
+    }
+}
+
+impl From<api::GenericEvent> for Workshop {
+    fn from(event: api::GenericEvent) -> Self {
+        Self {
+            title: event.title,
+            speaker: event.speaker,
+            pronouns: event.pronouns,
+            description: event.description,
+            link: event.link,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq, Eq, Serialize)]
+pub(crate) struct YouthWorkshop {
+    pub title: String,
+    speaker: String,
+    pronouns: Option<String>,
+    description: String,
+    link: Url,
+}
+
+impl fmt::Display for YouthWorkshop {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} by {}", self.title, self.speaker)
+    }
+}
+
+impl From<api::GenericEvent> for YouthWorkshop {
+    fn from(event: api::GenericEvent) -> Self {
+        Self {
+            title: event.title,
+            speaker: event.speaker,
+            pronouns: event.pronouns,
+            description: event.description,
+            link: event.link,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq, Eq, Serialize)]
+pub(crate) struct Performance {
+    pub title: String,
+    speaker: String,
+    pronouns: Option<String>,
+    description: String,
+    link: Url,
+}
+
+impl fmt::Display for Performance {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} by {}", self.title, self.speaker)
+    }
+}
+
+impl From<api::Performance> for Performance {
+    fn from(event: api::Performance) -> Self {
+        Self {
+            title: event.title,
+            speaker: event.speaker,
+            pronouns: event.pronouns,
+            description: event.description,
             link: event.link,
         }
     }
@@ -77,13 +173,16 @@ mod api {
     use url::Url;
 
     #[derive(Debug, Deserialize)]
-    #[serde(tag = "type", rename_all = "snake_case")]
+    #[serde(tag = "type", rename_all = "lowercase")]
     pub(super) enum Event {
-        Talk(Talk),
+        Talk(GenericEvent),
+        Workshop(GenericEvent),
+        YouthWorkshop(GenericEvent),
+        Performance(Performance),
     }
 
     #[derive(Debug, Deserialize)]
-    pub(super) struct Talk {
+    pub(super) struct GenericEvent {
         #[serde(with = "parse_datetime")]
         pub start_date: NaiveDateTime,
         pub venue: Venue,
@@ -92,6 +191,18 @@ mod api {
         pub pronouns: Option<String>,
         pub description: String,
         pub may_record: bool,
+        pub link: Url,
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub(super) struct Performance {
+        #[serde(with = "parse_datetime")]
+        pub start_date: NaiveDateTime,
+        pub venue: Venue,
+        pub title: String,
+        pub speaker: String,
+        pub pronouns: Option<String>,
+        pub description: String,
         pub link: Url,
     }
 

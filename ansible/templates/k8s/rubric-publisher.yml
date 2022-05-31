@@ -52,25 +52,18 @@ data:
     number = 5
 
     [[mapping]]
-    topic = "dapnet/emfcamp/workshop_1"
+    topic = "dapnet/emfcamp/workshop"
     [mapping.destination]
     type = "rubric"
     name = "emfcamp"
     number = 6
 
     [[mapping]]
-    topic = "dapnet/emfcamp/workshop_2"
+    topic = "dapnet/emfcamp/youth_workshop"
     [mapping.destination]
     type = "rubric"
     name = "emfcamp"
     number = 7
-
-    [[mapping]]
-    topic = "dapnet/emfcamp/workshop_3"
-    [mapping.destination]
-    type = "rubric"
-    name = "emfcamp"
-    number = 8
 
     [[mapping]]
     topic = "dapnet/m0nxn"
