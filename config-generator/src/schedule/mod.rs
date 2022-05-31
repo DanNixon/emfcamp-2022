@@ -1,9 +1,7 @@
-mod films;
 mod main_events;
 pub(crate) mod venue;
 
 use self::{
-    films::Film,
     main_events::{Performance, Talk, Workshop, YouthWorkshop},
     venue::Venue,
 };
@@ -20,8 +18,6 @@ pub(crate) struct Schedule {
 impl Schedule {
     pub(crate) fn load() -> Result<Self> {
         let mut events = main_events::load()?;
-        events.append(&mut films::load()?);
-
         events.sort();
         Ok(Self { events })
     }
@@ -49,7 +45,6 @@ impl fmt::Display for Event {
             EventKind::Performance(t) => {
                 write!(f, "Performance @ {} in {}: {}", self.start, self.venue, t)
             }
-            EventKind::Film(t) => write!(f, "Film @ {} in {}: {}", self.start, self.venue, t),
         }
     }
 }
@@ -79,5 +74,4 @@ pub(crate) enum EventKind {
     Workshop(Workshop),
     YouthWorkshop(YouthWorkshop),
     Performance(Performance),
-    Film(Film),
 }

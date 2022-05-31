@@ -29,7 +29,6 @@ fn venue_to_topic(venue: &Venue) -> String {
         Venue::Lounge => "dapnet/emfcamp/workshop",
         Venue::Amsat => "dapnet/emfcamp/workshop",
         Venue::YouthWorkshop => "dapnet/emfcamp/youth_workshop",
-        Venue::Film => "dapnet/emfcamp/film",
     }
     .to_string()
 }
@@ -47,7 +46,6 @@ fn venue_short_name(venue: &Venue) -> String {
         Venue::Lounge => "Lounge",
         Venue::Amsat => "AMSAT",
         Venue::YouthWorkshop => "Youth Ws",
-        Venue::Film => "Flm",
     }
     .to_string()
 }
@@ -65,12 +63,6 @@ fn event_to_message(event: &Event) -> String {
         }
         EventKind::Performance(performance) => {
             format!("{}: {}", venue_short_name(&event.venue), performance.title)
-        }
-        EventKind::Film(film) => {
-            format!(
-                "Film in 10 mins: {} ({}, {})",
-                film.title, film.certificate, film.runtime
-            )
         }
     };
 
