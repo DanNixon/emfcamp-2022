@@ -5,11 +5,21 @@ import logging
 def print_event(p, event):
     event_type = event["event"]["type"]
 
-    if event_type == "talk":
+    if event_type in ["talk", "workshop", "youth_workshop", "performance"]:
         p.set(
             align="center",
             underline=1,
         )
+
+        if event_type == "talk":
+            p.text("Talk\n")
+        elif event_type == "workshop":
+            p.text("Workshop\n")
+        elif event_type == "youth_workshop":
+            p.text("Youth Workshop\n")
+        elif event_type == "performance":
+            p.text("Performance\n")
+
         p.text(f"{event['event']['title']}\n")
 
         p.set(align="center")
@@ -21,7 +31,7 @@ def print_event(p, event):
 
         p.qr(event["event"]["link"], center=True)
 
-    if event_type == "film":
+    elif event_type == "film":
         p.set(
             align="center",
             underline=1,
@@ -30,7 +40,6 @@ def print_event(p, event):
 
         p.set(align="center")
         p.text(f"{event['event']['certificate']} ({event['event']['runtime']})\n")
-        p.text("Electromagnetic FILM\n")
 
         p.set()
         p.text(f"{event['event']['description']}")
