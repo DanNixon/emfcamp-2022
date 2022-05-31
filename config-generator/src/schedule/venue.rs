@@ -22,8 +22,8 @@ pub(crate) enum Venue {
     #[serde(rename = "Youth Workshop")]
     YouthWorkshop,
     Lounge,
-    #[serde(rename = "AMSAT")]
-    Amsat,
+    #[serde(rename = "AMSAT-UK")]
+    AmsatUk,
 }
 
 impl fmt::Display for Venue {
@@ -42,7 +42,7 @@ impl fmt::Display for Venue {
                 Self::Workshop5 => "Workshop 5",
                 Self::YouthWorkshop => "Youth Workshop",
                 Self::Lounge => "Lounge",
-                Self::Amsat => "AMSAT",
+                Self::AmsatUk => "AMSAT-UK",
             }
         )
     }

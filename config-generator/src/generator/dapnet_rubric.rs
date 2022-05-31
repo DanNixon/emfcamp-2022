@@ -27,7 +27,7 @@ fn venue_to_topic(venue: &Venue) -> String {
         Venue::Workshop4 => "dapnet/emfcamp/workshop",
         Venue::Workshop5 => "dapnet/emfcamp/workshop",
         Venue::Lounge => "dapnet/emfcamp/workshop",
-        Venue::Amsat => "dapnet/emfcamp/workshop",
+        Venue::AmsatUk => "dapnet/emfcamp/workshop",
         Venue::YouthWorkshop => "dapnet/emfcamp/youth_workshop",
     }
     .to_string()
@@ -44,7 +44,7 @@ fn venue_short_name(venue: &Venue) -> String {
         Venue::Workshop4 => "Ws 4",
         Venue::Workshop5 => "Ws 5",
         Venue::Lounge => "Lounge",
-        Venue::Amsat => "AMSAT",
+        Venue::AmsatUk => "AMSAT-UK",
         Venue::YouthWorkshop => "Youth Ws",
     }
     .to_string()
