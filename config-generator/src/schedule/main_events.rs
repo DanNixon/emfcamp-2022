@@ -62,7 +62,6 @@ pub(crate) struct Talk {
     speaker: String,
     pronouns: Option<String>,
     description: String,
-    recorded: bool,
     link: Url,
 }
 
@@ -79,7 +78,6 @@ impl From<api::GenericEvent> for Talk {
             speaker: event.speaker,
             pronouns: event.pronouns,
             description: event.description,
-            recorded: event.may_record,
             link: event.link,
         }
     }
@@ -154,8 +152,8 @@ impl fmt::Display for Performance {
     }
 }
 
-impl From<api::Performance> for Performance {
-    fn from(event: api::Performance) -> Self {
+impl From<api::GenericEvent> for Performance {
+    fn from(event: api::GenericEvent) -> Self {
         Self {
             title: event.title,
             speaker: event.speaker,
@@ -178,24 +176,11 @@ mod api {
         Talk(GenericEvent),
         Workshop(GenericEvent),
         YouthWorkshop(GenericEvent),
-        Performance(Performance),
+        Performance(GenericEvent),
     }
 
     #[derive(Debug, Deserialize)]
     pub(super) struct GenericEvent {
-        #[serde(with = "parse_datetime")]
-        pub start_date: NaiveDateTime,
-        pub venue: Venue,
-        pub title: String,
-        pub speaker: String,
-        pub pronouns: Option<String>,
-        pub description: String,
-        pub may_record: bool,
-        pub link: Url,
-    }
-
-    #[derive(Debug, Deserialize)]
-    pub(super) struct Performance {
         #[serde(with = "parse_datetime")]
         pub start_date: NaiveDateTime,
         pub venue: Venue,
