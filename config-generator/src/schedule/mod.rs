@@ -51,7 +51,11 @@ impl fmt::Display for Event {
 
 impl Ord for Event {
     fn cmp(&self, other: &Self) -> Ordering {
-        self.start.cmp(&other.start)
+        match self.start.cmp(&other.start) {
+            Ordering::Equal => self.venue.cmp(&other.venue),
+            Ordering::Less => Ordering::Less,
+            Ordering::Greater => Ordering::Greater,
+        }
     }
 }
 
