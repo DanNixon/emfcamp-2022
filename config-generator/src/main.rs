@@ -30,15 +30,13 @@ fn main() {
             }
         }
         Command::GenerateRubricContent => {
-            println!("  schedule_dapnet.txt: |");
             for msg in generator::dapnet_rubric::generate(&schedule) {
-                println!("    {}", msg);
+                println!("{}", msg);
             }
         }
         Command::GeneratePrinterContent => {
-            println!("  schedule_printer.txt: |");
             for msg in generator::printer::generate(&schedule) {
-                println!("    {}", msg);
+                println!("{}", msg);
             }
         }
     }
