@@ -139,7 +139,7 @@ Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: A journey thro
 Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Why doesn't the Universal Translator translate Klingon insults? A nerd...
 Sat, 04 Jun 2022 17:05:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Hacking Google with Poetry – what are words worth anyway?
 Sat, 04 Jun 2022 17:15:00 +0100 | dapnet/emfcamp/youth_workshop | Youth Ws: Raspberry Pi Pico Party Poppers
-Sat, 04 Jun 2022 17:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: 1-hour Computing Degree
+Sat, 04 Jun 2022 17:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: 1-hour* Computing Degree
 Sat, 04 Jun 2022 17:35:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Anatomy 102: Is that normal!?!
 Sat, 04 Jun 2022 17:45:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Pee is Powerful! From artwork to new world infrastructures with ALICE
 Sat, 04 Jun 2022 17:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Mixed RPGs - Dungeon Crawl Classics and D&D
