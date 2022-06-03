@@ -30,6 +30,9 @@ fn venue_to_topic(venue: &Venue) -> String {
         Venue::AmsatUk => "dapnet/emfcamp/workshop",
         Venue::YouthWorkshop => "dapnet/emfcamp/youth_workshop",
         Venue::Blacksmiths => "dapnet/emfcamp/workshop",
+        Venue::MainBar => "dapnet/emfcamp/workshop",
+        Venue::TheBomb => "dapnet/emfcamp/workshop",
+        Venue::OutsideTheBar => "dapnet/emfcamp/workshop",
     }
     .to_string()
 }
@@ -48,6 +51,9 @@ fn venue_short_name(venue: &Venue) -> String {
         Venue::AmsatUk => "AMSAT-UK",
         Venue::YouthWorkshop => "Youth Ws",
         Venue::Blacksmiths => "Blksmth",
+        Venue::MainBar => "M.Bar",
+        Venue::TheBomb => "Bomb",
+        Venue::OutsideTheBar => "Bar",
     }
     .to_string()
 }
