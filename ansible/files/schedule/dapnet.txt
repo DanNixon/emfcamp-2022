@@ -1,7 +1,6 @@
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Masterclass - Egg Spoon
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Coppersmiths - Bowl making
 Thu, 02 Jun 2022 14:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: 3D printed/open hardware laser tag
-Thu, 02 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
 Thu, 02 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Life Of Riley Ceilidh Dance
 Fri, 03 Jun 2022 08:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Pop Up Cafe
 Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
@@ -83,6 +82,7 @@ Fri, 03 Jun 2022 19:25:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Not another se
 Fri, 03 Jun 2022 19:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: [Film] General Magic
 Fri, 03 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] The Memepunks
 Fri, 03 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Build your own Geiger Counter
+Fri, 03 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
 Fri, 03 Jun 2022 20:05:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Shader Showdown and Byte Battle
 Fri, 03 Jun 2022 20:25:00 +0100 | dapnet/emfcamp/youth_workshop | Youth Ws: Painting with light - Build and paint with your own "Glowie"
 Fri, 03 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] Look Mum No Computer
