@@ -25,6 +25,9 @@ data:
     Wed, 01 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Another generic message about EMF being soon
     Thu, 02 Jun 2022 10:00:00 +0100 | dapnet/emfcamp/announcements | Are you on your way to EMF yet?
 
+  other.txt: |
+    Fri, 03 Jun 2022 11:30:00 +100 | dapnet/EMFCamp/announcements | Badges are available now!
+
   schedule_dapnet.txt: |
     {{ lookup('file', 'schedule/dapnet.txt') | indent(4) }}
 
