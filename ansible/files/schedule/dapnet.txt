@@ -3,8 +3,8 @@ Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Coppersmith
 Thu, 02 Jun 2022 14:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: 3D printed/open hardware laser tag
 Thu, 02 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Life Of Riley Ceilidh Dance
 Fri, 03 Jun 2022 08:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Pop Up Cafe
-Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Opening Ceremony
 Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
+Fri, 03 Jun 2022 10:10:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Opening Ceremony
 Fri, 03 Jun 2022 10:25:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
 Fri, 03 Jun 2022 10:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: A brief history of Time Zones and Daylight Saving Time
 Fri, 03 Jun 2022 10:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Using computers to cheat at maths
