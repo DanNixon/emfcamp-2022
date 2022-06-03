@@ -1,6 +1,7 @@
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Masterclass - Egg Spoon
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Coppersmiths - Bowl making
 Thu, 02 Jun 2022 14:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: 3D printed/open hardware laser tag
+Thu, 02 Jun 2022 18:55:00 +0100 | dapnet/emfcamp/workshop | Ws 4: Demo Compos
 Thu, 02 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Life Of Riley Ceilidh Dance
 Fri, 03 Jun 2022 08:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Pop Up Cafe
 Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
@@ -76,7 +77,6 @@ Fri, 03 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Captain Proton
 Fri, 03 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Receiving amateur radio satellite beacons
 Fri, 03 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
 Fri, 03 Jun 2022 18:45:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Ship vs Oil Rig
-Fri, 03 Jun 2022 18:55:00 +0100 | dapnet/emfcamp/workshop | Ws 4: Shader showdown
 Fri, 03 Jun 2022 18:55:00 +0100 | dapnet/emfcamp/workshop | Ws 5: MathsJam
 Fri, 03 Jun 2022 19:25:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Not another sex robot talk!
 Fri, 03 Jun 2022 19:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: [Film] General Magic
@@ -140,7 +140,6 @@ Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 2: How to make a 
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 5: Building mathematical structures with modular origami
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
-Sat, 04 Jun 2022 14:05:00 +0100 | dapnet/emfcamp/workshop | Ws 4: Demo Compos
 Sat, 04 Jun 2022 14:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Computational Alchemy
 Sat, 04 Jun 2022 14:25:00 +0100 | dapnet/emfcamp/workshop | AMSAT-UK: DIY Satellites
 Sat, 04 Jun 2022 14:25:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
@@ -223,6 +222,7 @@ Sun, 05 Jun 2022 11:15:00 +0100 | dapnet/emfcamp/workshop | Ws 2: What’s in th
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Hacking Gender: Transition À La Carte
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Building a copper telephone network at EMF
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Unfinished Projects: Breaking the cycle
+Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Origami Lanterns
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Arduino For Total Newbies - Solderless version
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/workshop | Ws 5: Dome Building Drop In
 Sun, 05 Jun 2022 11:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
