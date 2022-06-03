@@ -1,6 +1,7 @@
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Masterclass - Egg Spoon
 Thu, 02 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Coppersmiths - Bowl making
 Thu, 02 Jun 2022 14:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: 3D printed/open hardware laser tag
+Thu, 02 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
 Thu, 02 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Life Of Riley Ceilidh Dance
 Fri, 03 Jun 2022 08:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Pop Up Cafe
 Fri, 03 Jun 2022 09:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmithing - Have a go
@@ -28,7 +29,6 @@ Fri, 03 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: From Theorems 
 Fri, 03 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Computer Art from the 1960s until now
 Fri, 03 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Learn to Solder / Digital Music Synthesis workshop with ArduTouch music...
 Fri, 03 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/workshop | Ws 4: Machine learning playtime. Make normal objects clever with the micro:bit
-Fri, 03 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: Meditation for Hackers
 Fri, 03 Jun 2022 13:35:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Algorithmic patterns - a long history
 Fri, 03 Jun 2022 13:35:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Adventures with Home Energy Monitoring (with a Raspberry Pi & many Ard...
 Fri, 03 Jun 2022 13:35:00 +0100 | dapnet/emfcamp/workshop | Ws 5: Simon Singh Q&A
@@ -129,6 +129,7 @@ Sat, 04 Jun 2022 12:25:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths
 Sat, 04 Jun 2022 12:35:00 +0100 | dapnet/emfcamp/stage_c | Stg C: An engineer's guide to grief
 Sat, 04 Jun 2022 12:45:00 +0100 | dapnet/emfcamp/stage_a | Stg A: asdkfldsalkasdf: Keysmashes, Sexuality and Mathematical Randomness
 Sat, 04 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Blinkenrocket/Learn to solder
+Sat, 04 Jun 2022 12:55:00 +0100 | dapnet/emfcamp/workshop | Lounge: Meditation for Hackers
 Sat, 04 Jun 2022 13:15:00 +0100 | dapnet/emfcamp/stage_a | Stg A: The curious design of the Apollo Guidance Computer.
 Sat, 04 Jun 2022 13:15:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Lightning Talks Saturday
 Sat, 04 Jun 2022 13:35:00 +0100 | dapnet/emfcamp/youth_workshop | Youth Ws: Intro to AI: Train your computer!
@@ -138,6 +139,7 @@ Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Why Feedback S
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 2: How to make a cool '90s Protracker Module on an Amiga (or using emulation)
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 5: Building mathematical structures with modular origami
 Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
+Sat, 04 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
 Sat, 04 Jun 2022 14:05:00 +0100 | dapnet/emfcamp/workshop | Ws 4: Demo Compos
 Sat, 04 Jun 2022 14:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Computational Alchemy
 Sat, 04 Jun 2022 14:25:00 +0100 | dapnet/emfcamp/workshop | AMSAT-UK: DIY Satellites
@@ -162,6 +164,8 @@ Sat, 04 Jun 2022 16:25:00 +0100 | dapnet/emfcamp/workshop | Ws 2: Applied String
 Sat, 04 Jun 2022 16:25:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
 Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/stage_a | Stg A: A journey through philosophy: exploring metaphysics via memes and a sp...
 Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Why doesn't the Universal Translator translate Klingon insults? A nerd...
+Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/workshop | M.Bar: ADHD/ASD Meetup
+Sat, 04 Jun 2022 16:55:00 +0100 | dapnet/emfcamp/workshop | M.Bar: ADHD and ASD Meetup
 Sat, 04 Jun 2022 17:05:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Hacking Google with Poetry – what are words worth anyway?
 Sat, 04 Jun 2022 17:15:00 +0100 | dapnet/emfcamp/youth_workshop | Youth Ws: Raspberry Pi Pico Party Poppers
 Sat, 04 Jun 2022 17:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: 1-hour* Computing Degree
@@ -169,6 +173,7 @@ Sat, 04 Jun 2022 17:35:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Anatomy 102: I
 Sat, 04 Jun 2022 17:45:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Pee is Powerful! From artwork to new world infrastructures with ALICE
 Sat, 04 Jun 2022 17:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Mixed RPGs - Dungeon Crawl Classics and D&D
 Sat, 04 Jun 2022 17:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
+Sat, 04 Jun 2022 17:55:00 +0100 | dapnet/emfcamp/workshop | Bar: Hebocon: terrible robot fighting tournament
 Sat, 04 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Speed 3: Cruise Control
 Sat, 04 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: The Digi-Gurdy: An electronic MIDI enabled Hurdy Gurdy project
 Sat, 04 Jun 2022 18:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: Sifteo Cubes: Resurrecting a legend
@@ -186,6 +191,7 @@ Sat, 04 Jun 2022 20:05:00 +0100 | dapnet/emfcamp/stage_a | Stg A: GPT-3 Powerpoi
 Sat, 04 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] Flesh Tetris
 Sat, 04 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Barbot
 Sat, 04 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Belgian Beer tasting workshop
+Sat, 04 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/workshop | Ws 3: Obscurecon
 Sat, 04 Jun 2022 21:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] Graham Dunning
 Sat, 04 Jun 2022 22:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] 2xAA - electronic music crafted using Game Boys
 Sat, 04 Jun 2022 23:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: [Film] The Barkley Marathons
@@ -233,6 +239,7 @@ Sun, 05 Jun 2022 13:45:00 +0100 | dapnet/emfcamp/youth_workshop | Youth Ws: Game
 Sun, 05 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/stage_b | Stg B: Why you really need to get out more...
 Sun, 05 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Ws 2: Tor Node Operators meetup
 Sun, 05 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Blksmth: Blacksmiths - have a go
+Sun, 05 Jun 2022 13:55:00 +0100 | dapnet/emfcamp/workshop | Bomb: The Bomb Defusal - Escape Game
 Sun, 05 Jun 2022 14:05:00 +0100 | dapnet/emfcamp/stage_a | Stg A: Building a Home-Made Enigma Machine
 Sun, 05 Jun 2022 14:05:00 +0100 | dapnet/emfcamp/workshop | AMSAT-UK: Building a TinyGS Station 
 Sun, 05 Jun 2022 14:15:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Soft Electronics: Sewing Circuits
