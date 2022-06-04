@@ -37,6 +37,10 @@ pub(crate) enum Venue {
     HackspaceFoundation,
     #[serde(rename = "Null Sector")]
     NullSector,
+    #[serde(rename = "Null Sector SEM")]
+    NullSectorSem,
+    #[serde(rename = "Badge Tent")]
+    BadgeTent,
 }
 
 impl fmt::Display for Venue {
@@ -63,6 +67,8 @@ impl fmt::Display for Venue {
                 Self::FamilyLounge => "Family Lounge",
                 Self::HackspaceFoundation => "Hackspace Foundation",
                 Self::NullSector => "Null Sector",
+                Self::NullSectorSem => "Null Sector SEM",
+                Self::BadgeTent => "Badge Tent",
             }
         )
     }
