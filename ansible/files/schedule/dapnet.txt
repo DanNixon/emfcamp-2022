@@ -318,6 +318,7 @@ Sun, 05 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Ws 2: Air Quality Mo
 Sun, 05 Jun 2022 19:55:00 +0100 | dapnet/emfcamp/workshop | Ws 5: Project Euler
 Sun, 05 Jun 2022 20:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: 2xAA: writing chiptune using nanoloop
 Sun, 05 Jun 2022 20:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: [Film] The Speed Cubers
+Sun, 05 Jun 2022 20:25:00 +0100 | dapnet/emfcamp/workshop | Ws 1: Film Screening: "The Phenomenon, 2020" - A mind-blowing documentary wil...
 Sun, 05 Jun 2022 20:55:00 +0100 | dapnet/emfcamp/workshop | Null Sec.: Some techno, in a field. 
 Sun, 05 Jun 2022 21:25:00 +0100 | dapnet/emfcamp/stage_b | Stg B: [Music] Cutlasses
 Sun, 05 Jun 2022 21:25:00 +0100 | dapnet/emfcamp/stage_c | Stg C: [Film] Sneakers
