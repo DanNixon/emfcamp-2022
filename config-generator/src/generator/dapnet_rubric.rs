@@ -90,7 +90,7 @@ fn event_to_message(event: &Event) -> String {
         Some((_, _)) => {
             let (i, _) = msg.char_indices().nth(char_limit - 3).unwrap();
             let s: String = msg[..i].into();
-            format!("{}...", s)
+            format!("{s}...")
         }
     };
 

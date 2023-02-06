@@ -26,17 +26,17 @@ fn main() {
     match cli.command {
         Command::List => {
             for event in schedule.events {
-                println!("{}", event);
+                println!("{event}");
             }
         }
         Command::GenerateRubricContent => {
             for msg in generator::dapnet_rubric::generate(&schedule) {
-                println!("{}", msg);
+                println!("{msg}");
             }
         }
         Command::GeneratePrinterContent => {
             for msg in generator::printer::generate(&schedule) {
-                println!("{}", msg);
+                println!("{msg}");
             }
         }
     }
