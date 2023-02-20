@@ -13,20 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: pip install ansible ansible-lint
-
-      - name: Ansible Lint
-        run: ansible-lint
+      - uses: dannixon/ansible-testing/actions/lint@main
 
   config-generator-formatting-and-quality:
     name: config-generator Formatting and Quality
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Setup
         run: rustup component add clippy rustfmt
@@ -42,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Build and Test
         run: cd config-generator && cargo test
@@ -52,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Derive tags
         run: |
