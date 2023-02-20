@@ -52,7 +52,7 @@ impl From<api::Event> for Event {
 fn fix_shitty_timestamps(shitty_timestamp: NaiveDateTime) -> DateTime<FixedOffset> {
     DateTime::from_utc(
         shitty_timestamp - Duration::hours(1),
-        FixedOffset::east(60 * 60),
+        FixedOffset::east_opt(60 * 60).unwrap(),
     )
 }
 
